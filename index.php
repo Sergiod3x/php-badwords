@@ -1,8 +1,9 @@
 <!-- 
-    L'utente richiama la pagina saluta-nome con un parametro in GET
-    che descrive il nome dell'utente. La pagina risponde con Ciao e il nome
-    dell'utente all'interno del parametro GET
-    saluta-nome.php?name=michele
+    Creare una variabile con un paragrafo di testo a vostra scelta.
+    Stampare a schermo il paragrafo e la sua lunghezza.
+    Una parola da censurare viene passata dall’utente tramite parametro GET.
+    Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre asterischi (***) tutte le occorrenze della parola da censurare.
+    Tutto ciò che volete provare in più nel vostro codice inseritelo in un file bonus.php
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -13,26 +14,22 @@
     <title>Document</title>
 </head>
 <body>
-    <?php 
+    <h1>
+        <?php 
+            //  Creare una variabile con un paragrafo di testo a vostra scelta. Stampare a schermo il paragrafo e la sua lunghezza.
+            $par1 = 'Ciao Simone segreto, il segreto deve rimanere segreto!<br>';
+            $lunghezza = strlen($par1);
+            echo "La stringa ha {$lunghezza} caratteri<br/>";
+            
 
-    $userName = $_GET["name"];
-    $userName = ucfirst($userName);
+            //Una parola da censurare viene passata dall’utente tramite parametro GET. Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre asterischi (***) tutte le occorrenze della parola da censurare.
+            $censura = $_GET["name"];
+            $str2 = str_ireplace($censura, '***', $par1);
+            echo "<br/>{$str2}";
+        ?>
 
-    ?>
-    <h1>Ciao <?php echo $userName ?>!</h1>
-    
-    <!-- oppure -->
-    <h1>Ciao <?php echo ucfirst($_GET["name"]) ?>!</h1>
 
-    <h1> 
-    <?php 
-    $par1 = 'Ciao Simone segreto, il segreto deve rimanere segreto!<br>';
-    $str2 = str_ireplace($userName, '***', $par1);
-    echo $str2;
-
-    ?>
-
-</h1>
+    </h1>
 
     
     
