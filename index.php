@@ -25,7 +25,9 @@
             //Una parola da censurare viene passata dall’utente tramite parametro GET. Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre asterischi (***) tutte le occorrenze della parola da censurare.
             $censura = $_GET["name"];
             $str2 = str_ireplace($censura, '***', $par1);
-            echo "<br/>{$str2}";
+            echo "<br/>{$str2}<br/>";
+
+
         ?>
 
 
